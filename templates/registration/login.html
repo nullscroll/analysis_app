@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<article class="grid">
+  <div>
+    <hgroup>
+      <h1>Log In</h1>
+      <h2>anastasia</h2>
+    </hgroup>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <small> 
+      </small>
+      <button type="submit" class="contrast">Log In</button>
+    </form>
+  </div>
+  <div></div>
+</article>
+{% endblock %}
