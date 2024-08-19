@@ -20,6 +20,10 @@
       <ul>
           <li><h2><a href="/" class="contrast">HOME</a></h2></li>
       </ul>
+      <ul>
+        {% block navmenu %}
+        {% endblock %}
+      </ul>
     </nav>
     <main class="container">
         {% block content %}

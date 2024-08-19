@@ -5,6 +5,24 @@
 
 {% block title %}Home{% endblock %}
 
+{% block navmenu %}
+{% if user.is_authenticated %}
+<li><summary>{{ user.username }}</summary></li>
+<details class="dropdown">
+  <summary>Menu</summary>
+  <ul>
+    <li><a href="#">Solid</a></li>
+    <li><a href="#">Liquid</a></li>
+    <li><a href="#">Gas</a></li>
+    <li><a href="#">Plasma</a></li>
+  </ul>
+</details>
+{% else %}
+<li><a href="{% url 'login' %}">Log In</a></li>
+<li><a href="{% url 'signup' %}">Sign Up</a></li>
+{% endif %}
+{% endblock navmenu %}
+
 {% block content %}
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
@@ -23,56 +41,54 @@
     <!--      hx-target="#search-results" -->
     <!--      hx-indicator=".htmx-indicator"> -->
 
-  <div>
-      <ul id="search-results">
-      </ul>
-  </div>
-  <div id="tabl">
-    <details>
-      <summary role="button" class="contrast">Contrast</summary>
-      <p>sadasd</p>
-      <input type="number"></input>
-    </details>
-    <details>
-      <summary role="button" class="contrast">Contrast 2</summary>
-      <p>2222</p>
-    </details>
-    <details>
-      <summary role="button" class="contrast">Contras 3t </summary>
-      <p>AAA3</p>
-    </details>
-    <details>
-      <summary role="button" class="contrast">Contras 3t </summary>
-      <p>AAA3</p>
-    </details>
-    <details>
-      <summary role="button" class="contrast">Contras 3t </summary>
-      <p>AAA3</p>
-    <p> aaaa </p>
-    <p> a2aa </p>
-    <p> a3aa </p>
-      <input type="number"></input>
-      <input type="number"></input>
-      <input type="number"></input>
-      <input type="number"></input>
-      <input type="number"></input>
-      <input type="number"></input>
-    <p> a4aa </p>
-    <p> a5aa </p>
-    </details>
-  </div>
+  <!-- <div> -->
+  <!--     <ul id="search-results"> -->
+  <!--     </ul> -->
+  <!-- </div> -->
+  <!-- <div id="tabl"> -->
+  <!--   <details> -->
+  <!--     <summary role="button" class="contrast">Contrast</summary> -->
+  <!--     <p>sadasd</p> -->
+  <!--     <input type="number"></input> -->
+  <!--   </details> -->
+  <!--   <details> -->
+  <!--     <summary role="button" class="contrast">Contrast 2</summary> -->
+  <!--     <p>2222</p> -->
+  <!--   </details> -->
+  <!--   <details> -->
+  <!--     <summary role="button" class="contrast">Contras 3t </summary> -->
+  <!--     <p>AAA3</p> -->
+  <!--   </details> -->
+  <!--   <details> -->
+  <!--     <summary role="button" class="contrast">Contras 3t </summary> -->
+  <!--     <p>AAA3</p> -->
+  <!--   </details> -->
+  <!--   <details> -->
+  <!--     <summary role="button" class="contrast">Contras 3t </summary> -->
+  <!--     <p>AAA3</p> -->
+  <!--   <p> aaaa </p> -->
+  <!--   <p> a2aa </p> -->
+  <!--   <p> a3aa </p> -->
+  <!--     <input type="number"></input> -->
+  <!--     <input type="number"></input> -->
+  <!--     <input type="number"></input> -->
+  <!--     <input type="number"></input> -->
+  <!--     <input type="number"></input> -->
+  <!--     <input type="number"></input> -->
+  <!--   <p> a4aa </p> -->
+  <!--   <p> a5aa </p> -->
+  <!--   </details> -->
+  <!-- </div> -->
 
-  <script> 
-tabl = document.getElementById('tabl');
-new Sortable(tabl, {
-    animation: 150,
-    ghostClass: 'blue-background-class'
-});
-  </script>
+  <!-- <script> --> 
+<!-- tabl = document.getElementById('tabl'); -->
+<!-- new Sortable(tabl, { -->
+  <!--   animation: 150, -->
+  <!--   ghostClass: 'blue-background-class' -->
+<!-- }); -->
+  <!-- </script> -->
 
 {% else %}
   <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
 {% endif %}
 {% endblock %}
