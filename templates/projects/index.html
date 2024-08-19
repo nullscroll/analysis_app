@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+
+<button>add project</button>
+{% if projects_list %}
+    <ul>
+    {% for project in projects_list %}
+        <li><a href="/projects/{{ project.id }}/">{{ project.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<h2>{{ project.name }} </h2>
+
+{% if measurement_list %}
+    <ul>
+    {% for measurement in measurement_list %}
+        <li>{{ measurement.event }} {{ measurement.name }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No measurementsa are available.</p>
+{% endif %}
